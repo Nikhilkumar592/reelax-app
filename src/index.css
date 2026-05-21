@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply font-sans bg-reelax-bg text-reelax-text-primary;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  input, select, textarea {
+    @apply font-sans;
+  }
+}
+
+@layer components {
+  .input-base {
+    @apply w-full px-3 py-2.5 text-sm border border-reelax-input-border rounded-md bg-reelax-input-bg
+           text-reelax-text-primary placeholder-reelax-input-placeholder
+           focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue
+           transition-all duration-150;
+  }
+
+  .select-base {
+    @apply w-full px-3 py-2.5 text-sm border border-reelax-input-border rounded-md bg-reelax-input-bg
+           text-reelax-text-primary appearance-none cursor-pointer
+           focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue
+           transition-all duration-150;
+  }
+
+  .btn-primary {
+    @apply bg-brand-blue text-white text-sm font-semibold px-5 py-2.5 rounded-md
+           hover:bg-brand-blue-hover active:scale-[0.98]
+           transition-all duration-150 cursor-pointer;
+  }
+
+  .btn-ghost {
+    @apply text-reelax-text-secondary text-sm font-medium px-5 py-2.5 rounded-md
+           hover:bg-gray-100 active:scale-[0.98]
+           transition-all duration-150 cursor-pointer;
+  }
+
+  .card {
+    @apply bg-reelax-card-bg rounded-xl border border-reelax-border shadow-card;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { @apply bg-gray-300 rounded-full; }
+::-webkit-scrollbar-thumb:hover { @apply bg-gray-400; }
+
+/* Select arrow override */
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 14px;
+}
