@@ -31,8 +31,8 @@ const CITIES = {
 
 export default function BillingForm({ onCancel, onSave }) {
   const [form, setForm] = useState({
-    companyName: 'abhigyan',
-    email: 'abhigyan.pandey@getreelax.com',
+    companyName: '',
+    email: '',
     gstNumber: '',
     panNumber: '',
     premise: '',
